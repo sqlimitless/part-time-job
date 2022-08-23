@@ -22,7 +22,8 @@ async function createWindow() {
       nodeIntegration: (process.env
           .ELECTRON_NODE_INTEGRATION as unknown) as boolean,
       contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION
-    }
+    }/*,
+    frame: false*/
   })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
@@ -60,6 +61,7 @@ app.on('ready', async () => {
     try {
       await installExtension(VUEJS3_DEVTOOLS)
     } catch (e) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       console.error('Vue Devtools failed to install:', e.toString())
     }
