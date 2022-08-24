@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <v-main>
+      <window-bar/>
       <left-menu/>
       <router-view/>
     </v-main>
@@ -10,6 +11,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import LeftMenu from './components/leftMenu/LeftMenu.vue';
+import WindowBar from './components/windowBar/WindowBar.vue';
 
 export default defineComponent({
   name: 'App',
@@ -20,7 +22,8 @@ export default defineComponent({
     }
   },
   components: {
-    LeftMenu
+    LeftMenu,
+    WindowBar
   },
 })
 </script>
